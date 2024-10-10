@@ -33,5 +33,21 @@ class RandevuRepository extends BaseRepository
     public function count($id){
         return $this->model->where('user_id', $id)->count();
     }
-
+    public function deleteById($id)
+    {
+        $randevu = $this->model->find($id);
+        if ($randevu) {
+            return $randevu->delete();
+        }
+        return false;
+    }
+    public function updateById($id, array $data)
+    {
+        $randevu = $this->model->find($id);
+        if ($randevu) {
+            $randevu->update($data);
+            return $randevu;
+        }
+        return null;
+    }
 }

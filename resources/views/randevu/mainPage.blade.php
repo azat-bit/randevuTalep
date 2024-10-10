@@ -20,7 +20,6 @@
                 <tr>
                     <th>Açıklama</th>
                     <th>Tarih</th>
-                    <th>Başlık</th>
                     <th>İşlemler</th>
                 </tr>
             </thead>
@@ -29,9 +28,18 @@
                     <tr>
                         <td>{{ $randevu->aciklama }}</td>
                         <td>{{ $randevu->tarih }}</td>
-
                         <td>
+                            <!-- Düzenle Butonu -->
+                            <a href="{{ route('randevu.edit', ['id' => $randevu->id]) }}" class="btn btn-primary"
+                                title="Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
 
+                            <!-- Sil Butonu -->
+                            <a href="{{ route('randevu.delete', ['id' => $randevu->id]) }}" class="btn btn-danger" title="Sil"
+                                onclick="return confirm('Bu randevuyu silmek istediğinize emin misiniz?')">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

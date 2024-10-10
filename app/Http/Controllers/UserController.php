@@ -100,4 +100,14 @@ class UserController extends Controller
         $this->authService->logout();
         return redirect()->route('login');
     }
+
+    public function profil($id){
+       
+       $user = $this->authService->getUserById($id); // Kullanıcıyı servis üzerinden al
+        if (!$user) {
+            abort(404, 'Kullanıcı bulunamadı');
+        }
+
+        return view('profil.profil', compact('user'));
+    }
 }

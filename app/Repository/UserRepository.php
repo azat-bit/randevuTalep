@@ -33,4 +33,8 @@ class UserRepository extends BaseRepository
     public function  createUser($data){
         return $this->model->create($data);
     }
+    public function findById($id)
+    {
+        return $this->model->where('id', $id)->first(); // Kullanıcı bulunamazsa null döner
+    }
 }

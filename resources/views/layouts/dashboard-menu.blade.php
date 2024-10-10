@@ -20,7 +20,7 @@
     <!-- Sidebar Menü -->
     <div class="sidebar">
         <a href="{{ route('dashboard', ['id' => $user->id]) }}"><i class="fas fa-home"></i> Anasayfa</a>
-        <a href="#"><i class="fas fa-user"></i> Profil</a>
+        <a href="{{ route('user.profil', ['id' => $user->id]) }}"><i class="fas fa-user"></i> Profil</a>
         <a href="{{ route('randevu', ['id' => $user->id]) }}"><i class="fas fa-calendar-alt"></i> Randevular</a>
         <a href="#"><i class="fas fa-calendar-alt"></i> Takvim</a>
         <a href="#"><i class="fas fa-cog"></i> Ayarlar</a>

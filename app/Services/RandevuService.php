@@ -28,5 +28,22 @@ class RandevuService{
     public function count($id){
         return $this->randevuRepository->count($id);
     }
+    public function deleteRandevu($id)
+    {
+        return $this->randevuRepository->deleteById($id);
+    }
+    public function updateRandevu($id, array $data)
+    {
+        return $this->randevuRepository->updateById($id, $data);
+    }
+    public function edit($id)
+    {
+        $randevu = $this->randevuService->getRandevuById($id);
+        if (!$randevu) {
+            return redirect()->back()->with('error', 'Randevu bulunamadı.');
+        }
+
+        return view('randevu.edit', compact('randevu'));
+    }
         
 }
