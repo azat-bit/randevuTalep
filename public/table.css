@@ -1,0 +1,43 @@
+/* public/css/custom.css */
+
+/* Tablonun genel stili */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Başlık (thead) stili */
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Satırların stili */
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Alternatif arka plan rengi için zebra stil */
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Üzerine gelindiğinde satır rengi */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hücreler arası boşluk */
+.table td, .table th {
+    padding: 12px 15px;
+}
+
+/* İşlemler sütununun özel stili */
+.table td:last-child {
+    text-align: center;
+}
