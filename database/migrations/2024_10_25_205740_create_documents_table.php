@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHizmetlerTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateHizmetlerTable extends Migration
      */
     public function up()
     {
-        Schema::create('hizmetler', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('hizmet_adi');
-            $table->decimal('ucret', 10, 2)->nullable();
+            $table->string('title');
+            $table->string('file_path');
+            $table->string('description')->nullable();
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateHizmetlerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hizmetler');
+        Schema::dropIfExists('documents');
     }
 }

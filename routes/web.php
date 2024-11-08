@@ -6,7 +6,7 @@ use App\Http\Controllers\ServiceController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +43,12 @@ Route::post('/randevu/store', [RandevuController::class, 'store'])->name('randev
 Route::get('/randevu/{id}/delete', [RandevuController::class, 'delete'])->name('randevu.delete');
 Route::get('/randevu/{id}/edit', [RandevuController::class, 'edit'])->name('randevu.edit');
 Route::post('/randevu/{id}/update', [RandevuController::class, 'update'])->name('randevu.update');
+
+/*Documnet*/
+
+
+// Document listesi için yeni bir rota
+Route::get('documents/{id}', [DocumentController::class, 'index'])->name('document.index');
+Route::get('/documents/create/{id}',[DocumentController::class,'create'])->name('document.create');
+Route::post('/documents/store', [DocumentController::class, 'store'])->name('document.store');
 

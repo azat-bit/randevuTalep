@@ -14,7 +14,6 @@ class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
- 
     use Notifiable;
     use TwoFactorAuthenticatable;
 
@@ -27,6 +26,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'telefon',  // Yeni eklenen alan
+        'adres',    // Yeni eklenen alan
     ];
 
     /**
